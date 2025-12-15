@@ -7,8 +7,24 @@ import { TaskItem } from '../models/task-item.model';
 export class Task {
   tasks = signal<TaskItem[]>([]);
 
-  addTAsk(task: string, status: string) {
-    this.tasks
+  addTask(task: string, status: string) {
+    this.tasks.update((previousState)=>{
+      return [...previousState, {task,status}];
+    })
   }
+   markAsStatus(text: string, updatedStatus: string){
+    this.tasks.update((existingCollection) =>{
+       const findTask= existingCollection.find(x => x.task === text);
 
+        if(findTask){
+          return [
+            ...existingCollection.filter(x => x.task !== text),
+          {task:text, status: updatedStatus}
+          ]
+        }
+        else{
+          return existingCollection;
+        }
+    })
+  }
 }
