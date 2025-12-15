@@ -7,6 +7,7 @@ import { Task as TaskService } from './services/task';
 
 @Component({
   selector: 'app-root',
+   standalone: true,
   imports: [TaskForm, TaskList],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -15,19 +15,22 @@
       "architect": {
         "build": {
           "builder": "@angular/build:application",
-          "options": {
-             "outputPath": "dist/task-manager",
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+         "options": {
+  "outputPath": "dist/task-manager",
+  "index": "src/index.html",
+  "tsConfig": "tsconfig.app.json",
+  "baseHref": "/",
+  "assets": [
+    "src/favicon.ico",
+    "src/assets"
+  ],
+
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "scripts": []
+
+
           },
           "configurations": {
             "production": {
