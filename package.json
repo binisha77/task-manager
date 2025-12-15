@@ -8,7 +8,7 @@
   "build": "ng build --configuration production",
   "watch": "ng build --watch --configuration development",
   "test": "ng test",
-  "preview": "ng serve"
+  "preview": "ng serve",
     "preview:prod": "npm run build && serve -s dist/task-manager"
 
 
